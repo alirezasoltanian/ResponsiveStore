@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Navbar from './Navbar'
 
 import styled from 'styled-components';
-const Div = styled.div`
+const Div = styled.div`  
   width 2rem;
   height: 2rem;
   position: fixed;
@@ -57,7 +57,8 @@ class Hamburger extends Component {
   render() { 
     return (
       <>
-        <Div open = {this.state.open } onClick={this.openHandler}>
+  
+        <Div  open = {this.state.open } onClick={this.openHandler}>
           <div></div>
           <div></div>
           <div></div>

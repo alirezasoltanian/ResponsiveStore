@@ -60,8 +60,13 @@ const Store = () => {
        
         
         <div className={styles.container} >
-            <h1>Best selling</h1>
-             <Swiper 
+          <h1 className={styles.best}>Best selling</h1>
+          
+             
+        
+        {
+                products.length ?
+                <Swiper 
               breakpoints={{
                   // when window width is >= 268px
                 268: {
@@ -83,9 +88,9 @@ const Store = () => {
 
                 },
                 // when window width is >= 68px
-                1568: {
-                  slidesPerView: 5,
-                  slidesPerGroup  : 5
+                1168: {
+                  slidesPerView: 4,
+                  slidesPerGroup  : 4
                 },
                 
               }}
@@ -102,16 +107,14 @@ const Store = () => {
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
-        
-        {
-                products.length ?
-                products.slice(0 , 10).map(product =>  <SwiperSlide className={styles.swip}><Product 
+                {products.slice(0 , 10).map(product =>  <SwiperSlide className={styles.swip}><Product 
                         key={product.id} 
                         productData = {product}
-                    /></SwiperSlide>) : <div><img className={styles.loading} alt='i' src={img} /><h1>LOADING</h1> </div> 
+                    /></SwiperSlide> )} </Swiper >: <div className={styles.loading}></div> 
                     
             }
-        </Swiper>
+        
+        
         </div>
       
     );

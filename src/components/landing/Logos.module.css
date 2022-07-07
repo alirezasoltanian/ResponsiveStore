@@ -1,14 +1,17 @@
 .RContainer{
-  background: #FFEBC1;
+  background: url(../../images/backf.jpg);
+  background-size: cover;
   z-index: 20;
   padding: 10vw;
 }
 .container {
   text-align: center;
-  background-color: #D7A86E;
+  background-color: #ffd1482d;
   border-radius: 10px;
   z-index: 25;
-  color: rgb(65, 20, 20);
+  backdrop-filter: blur(4px);
+
+  color: rgb(232, 193, 0);
 }
 
 .container h3 {

@@ -1,12 +1,29 @@
 .header {
   display: flex;
   justify-content: space-between;
-  background-color: #FFEBC1;
+  background-color: #ffebc15e;
   align-items: center;
   list-style: none;
   z-index: 23;
   position: fixed;
   width:100%;
+  font-size: 1.2rem;
+  height: 130px;
+  transition: all .3s;
+  
+}
+.headerScroll {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #241500c3;
+  align-items: center;
+  list-style: none;
+  z-index: 23;
+  position: fixed;
+  width:100%;
+  transition: all .7s;
+
   
 }
 
@@ -14,6 +31,22 @@
   width: 80px;
   border-radius: 50%;
   margin: auto 0;
+
+}
+.logos {
+  width: 50px;
+  align-items: center;
+  justify-content: center;
+}
+.text {
+  font-weight: bold;
+  color: gold;
+  justify-content: center;
+  align-items: center;
+  margin-right: 25vh;
+  margin-left: -25vh;
+
+
 
 }
 
@@ -33,6 +66,8 @@
 .list li a {
   color: #D7A86E;
   text-decoration: none;
+  transition: all .7s ;
+
 }
 .list li a:hover {
   color: #571700;
@@ -48,8 +83,8 @@
 }
 .iconContainer span {
   position: absolute;
-  top: 18px;
-  right: 165px;
+  top: 12px;
+  right: 85px;
   background-color: #0b499b;
   border-radius: 50%;
   width: 20px;
@@ -62,7 +97,15 @@
 
 }
 
-
+@media (max-width : 1100px) {
+  .text {
+    display: none;
+    transform: scaleZ(0);  
+  
+  
+  
+  }
+}
 
 @media(max-width : 750px ) {
   
@@ -89,11 +132,19 @@
     border-bottom-right-radius: 10px;
 
   } 
+  .close h2 {
+    display: none;
+    transform: scaleZ(0);   
+  }
   .list li a {
     color: #D7A86E;
     text-decoration: none;
   }
   .header {
+    display: none;
+    transform: scaleZ(0);    
+  }
+  .headerScroll {
     display: none;
     transform: scaleZ(0);    
   }
