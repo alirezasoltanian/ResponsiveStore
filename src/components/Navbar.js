@@ -29,8 +29,8 @@ const Navbar = ({Open}) => {
         <ul className={styles.list}>
           <li><Link to = '/'>home</Link></li>
           <li><Link to = 'products'>products</Link></li>
-          <li><Link to = '/'>Shopping</Link></li>
-          <li><Link to = '/aboutus'>about us</Link></li>
+          <li><Link to = '/contactUs'>ContactUs</Link></li>
+          <li><Link to = '/aboutUs'>about us</Link></li>
         </ul>
       </div>
       <h2 className={styles.text}>RESPONSIVE<img  className={styles.logos} src={logo} alt = 'logo' /></h2>

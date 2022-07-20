@@ -81,6 +81,7 @@
   padding-right: 75px;
   padding-top: 100px;
 }
+
 .iconContainer span {
   position: absolute;
   top: 12px;
@@ -115,11 +116,11 @@
     background-color: #a64b2ae7;
     margin: 0;
     position: fixed;
-    left: 0;
+    left: 0%;
     transform: scaleX(0);
     top: 0;
-    width: 30vh;
-    height: 50vh;
+    width: 100vh;
+    height: 100vh;
     backdrop-filter: blur(30px);
     border-bottom-right-radius: 10px;
     transform: scaleZ(100%);
@@ -128,17 +129,28 @@
     z-index: 20;
     transform-origin: 1px ;
     transition: right linear .2s;
-    opacity: 0.8;
+    opacity: 0.9;
     border-bottom-right-radius: 10px;
 
   } 
   .close h2 {
-    display: none;
+    visibility: hidden;
     transform: scaleZ(0);   
   }
   .list li a {
     color: #D7A86E;
     text-decoration: none;
+    
+  }
+  .list li  {
+    padding-top: 10px;
+    cursor: pointer;
+    color: #D7A86E;
+    font-weight: bold;
+    margin-left: -105%;
+    text-decoration: none;
+    z-index: 100;
+
   }
   .header {
     display: none;
@@ -154,8 +166,22 @@
   }
   .list li {
     color: blue;
+
   }
   .list li :hover {
     color: rgb(120, 79, 157);
   }
+  .iconContainer a {
+    
+    margin-left: -100%;
+    width: 1px;
+    padding: auto;
+    
+  }
+  .iconContainer span {
+    
+  right:102%;
+    
+  }
+  
 }

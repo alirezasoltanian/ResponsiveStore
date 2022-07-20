@@ -6,6 +6,8 @@ import ProductsDetails from './components/ProductsDetails';
 import CartContextProvider from './context/CartContextProvider';
 import Hamburger from './components/hamburger';
 import Footer from './components/footer'
+import AboutUs from './components/AboutUs';
+import ContactUs from './components/ContactUs';
 // import Navbara from './components/shared/Navbar';
 
 import ShopCart from './components/ShopCart' ;
@@ -22,6 +24,10 @@ function App() {
           <Route path="/cart" element={<ShopCart />} />
           <Route path="/products/:id" element={<ProductsDetails />} />
           <Route path="/products" element={<Store />} />
+          <Route path="/aboutUs" element={<AboutUs />} />
+          <Route path="/contactUs" element={<ContactUs />} />
+
+
           <Route path="/home" element={<Home />} />
           <Route path='/*' element={<Navigate to='/home' />} />
         </Routes>
