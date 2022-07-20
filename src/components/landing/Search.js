@@ -22,18 +22,12 @@ class Search extends Component {
 
   render() { 
     return (
-      <form onSubmit={this.submitHandler}>
-         <div className={styles.container} >
+      <div onSubmit={this.submitHandler}>
+         <div className={styles.containerS} >
            <h1>SEARCH</h1>
            <input  placeholder='SEARCH (just for design)' value={this.state.text} onChange={this.changeHandler} />
-           <div>
-             <br></br>
-             <br></br>
-             <br></br>
-             <span>{this.state.text}</span>
-           </div>
          </div>
-      </form>
+      </div>
     );
   }
 }
