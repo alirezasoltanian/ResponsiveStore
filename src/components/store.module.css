@@ -1,16 +1,38 @@
+
+.containerForFilter {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  background-color: #fcdbb0;
+  padding-top: 130px;
+  position: relative;
+
+
+} 
+.boxFilter{
+  position: absolute;
+  justify-content: center;
+  background-color: #cac9c7f3;
+  height:500px;
+  border-radius: 10px;
+  width: 50%;
+  min-width: 300px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
   padding: 120px 150px;
   min-height: 1000px;
   background-color: #fcdbb0;
 
 }
 .loading {
-  padding-left: 35vw;
-  padding-top: -35vw;
+  
+  padding-top: -505vw;
 }
 
 @media (max-width: 1200px) {

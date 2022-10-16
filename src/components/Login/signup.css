@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,600;1,600&family=Press+Start+2P&display=swap');
+
+.containerL {
+  display: flex;
+  justify-content: center ;
+  background-color: #1c1c1c;
+  min-height: 100vh ;
+  align-items: center ;
+}
+.formContainer {
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid #f5dc8a;
+  width: 20%;
+  padding: 50px ;
+  margin: 20px ;
+  margin-top: 130px;
+  border-radius: 10px ;
+  height: fit-content;
+  background-color: #b3b3b3;
+  backdrop-filter: blur(4px);
+  min-width: 250px;
+  max-height: 800px;
+}
+.header {
+  text-align: left;
+  margin-bottom: 0px ;
+  font-size: 1.8rem ;
+  color: #247881;
+}
+.formField {
+  display: flex ;
+  flex-direction: column ;
+  margin-bottom: 10px ;
+  height: 75px ;
+}
+
+.formField label {
+   text-align: left;
+   margin-bottom: 5px;
+   color: rgb(55, 55, 55);
+   font-size: 0.9rem ;
+}
+
+.formField span {
+  height: 10px;
+  text-align: left;
+  margin-top: 35px ;
+  width: fit-content ;
+  font-size: 0.7rem;
+  color: red;
+  padding: 2px 3px;
+  line-height: 10px ;
+  border-radius: 3px ;
+  background-color: rgba(255, 0, 21, 0.18);
+}
+
+.formInput {
+   width: 300px;
+   height: 30px;
+   border-radius: 5px;
+   padding: 0px 10px;
+   border: 1px solid silver;
+   transition: all 0.2s ease-in;
+}
+
+.uncompleted {
+  width: 300px;
+   height: 30px;
+   border-radius: 5px;
+   padding: 0px 10px;
+   border: 1px solid rgb(240, 6, 6);
+   transition: all 0.2s ease-in;
+}
+
+.uncompleted:focus ,
+.uncompleted:focus {
+  outline: none;
+  line-height: 30px;
+  height: 30px;
+  border: 1px solid blue ;
+}
+
+.formButtons {
+  display: flex;
+  justify-content: space-around;
+
+}
+.formButtons a {
+  color: blue;
+  text-decoration: none ;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+.formButtons a:hover {
+  background: #247881;
+  border-radius: 5px;
+
+}
+.formButtons button {
+  color: blue;
+  font-weight: bold;
+  background: #43919B;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+.formButtons button:hover {
+  color: rgb(9, 9, 171);
+   
+}
+.checkBoxContainer {
+  display: flex;
+  font-size: 0.85rem;
+  flex-direction: row !important;
+  align-items: center;
+  height:  20px !important;
+  text-align: center;
+}
+
+.formField:nth-child(6) label {
+  color: #247881;
+}
+.or p{
+  padding: 20px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  color: #247881;
+  background-color: blue;
+  margin-top: 20px;
+  font-size: large;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.or{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+  
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #0f9d58;
+  padding: 10px;
+  width: fit-content;
+  margin: 0 auto;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button:hover {
+  background: #07713e;
+}
+
+.button img {
+  width: 30px;
+  margin-right: 10px;
+}
+.CheckBox{
+ 
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}

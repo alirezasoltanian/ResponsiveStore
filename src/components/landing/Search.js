@@ -16,7 +16,6 @@ class Search extends Component {
   }
   submitHandler = event => {
     event.preventDefault()
-    console.log(this.state.text);
   }
   
 

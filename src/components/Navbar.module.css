@@ -12,6 +12,9 @@
   transition: all .3s;
   
 }
+.listContainer {
+  display: flex;
+}
 .headerScroll {
   height: 80px;
   display: flex;
@@ -28,7 +31,7 @@
 }
 
 .iconContainer img {
-  width: 80px;
+  width: 10px;
   border-radius: 50%;
   margin: auto 0;
 
@@ -43,8 +46,7 @@
   color: gold;
   justify-content: center;
   align-items: center;
-  margin-right: 25vh;
-  margin-left: -25vh;
+  margin-left: 5vh;
 
 
 
@@ -74,12 +76,16 @@
 }
 .iconContainer {
   position: relative;
+  
 }
-.iconContainer a {
+.basket {
   font-size: 2.4rem;
   color: #1a73e8;
-  padding-right: 75px;
-  padding-top: 100px;
+  
+  margin-right: 75px;
+  margin-top: 100px;
+  margin-left: 75px;
+  
 }
 
 .iconContainer span {
@@ -111,6 +117,7 @@
 @media(max-width : 750px ) {
   
   .close {
+    
     display:inline-flex;
     flex-direction: column;
     background-color: #a64b2ae7;
@@ -131,7 +138,6 @@
     transition: right linear .2s;
     opacity: 0.9;
     border-bottom-right-radius: 10px;
-
   } 
   .close h2 {
     visibility: hidden;

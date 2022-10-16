@@ -10,9 +10,10 @@ import ScrollToTop from "./components/shared/ScrollTop";
 //login
 import Login from "./components/Login/Login";
 import SignUp from "./components/Login/Signup";
-// Redux
-import store from './components/redux/store'
-import { Provider } from 'react-redux'
+//Context
+import ProductContextProvider from "./context/ProductContextProvider";
+import CartContextProvider from "./context/CartContextProvider";
+import AuthContextProvider from "./context/AuthContextProvider";
 // import Navbara from './components/shared/Navbar';
 
 import ShopCart from "./components/ShopCart";
@@ -21,8 +22,8 @@ function App() {
   return (
     <div className="App">
       <ScrollToTop />
-        <Provider store={store}>
-
+      <CartContextProvider>
+          <ProductContextProvider>
             <Hamburger />
             {/* <Navbara /> */}
 
@@ -32,13 +33,15 @@ function App() {
               <Route path="/products" element={<Store />} />
               <Route path="/aboutUs" element={<AboutUs />} />
               <Route path="/contactUs" element={<ContactUs />} />
+
               <Route path="/home" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/signUp" element={<SignUp />} />
               <Route path="/*" element={<Navigate to="/home" />} />
             </Routes>
             <Footer />
-        </Provider>
+          </ProductContextProvider>
+      </CartContextProvider>
     </div>
   );
 }

@@ -12,7 +12,6 @@ const sumItems = items => {
   return {itemsCounter, total}
 }
 const cardReducer = (state,action) => {
-  console.log(state)
   switch(action.type) {
     case 'ADD_ITEM' :
       if (!state.selectedItems.find(item => item.id === action.payload.id)){

@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import styles from "./Navbar.module.css";
 import logo from "../images/Framsse 1.png";
 import { Link } from "react-router-dom";
 import { BsFillBasketFill } from "react-icons/bs";
-import { useSelector } from "react-redux";
+import { CartContext } from "../context/CartContextProvider";
 import { auth } from "../firebase";
 const Navbar = ({ Open , openHandler }) => {
   const [show, setShow] = useState(true);
@@ -22,7 +22,7 @@ const Navbar = ({ Open , openHandler }) => {
       window.removeEventListener("scroll", controlNavbar);
     };
   }, []);
-  const  state  = useSelector(state => state.cartState);
+  const { state } = useContext(CartContext);
 
   return (
     <header
@@ -33,29 +33,29 @@ const Navbar = ({ Open , openHandler }) => {
       <div className={styles.listContainer}>
         <h2 className={styles.text}>
           RESPONSIVE
-         <img className={styles.logos} src={logo} alt="logo" /> 
+          <img className={styles.logos} src={logo} alt="logo" />
         </h2>
         <ul className={styles.list}>
           <li>
-           <Link to="/login" >Login</Link>/<Link to="/signUp"  >SignUp</Link> 
+           <Link to="/login" onClick={openHandler}>Login</Link>/<Link to="/signUp" onClick={openHandler} >SignUp</Link> 
           </li>
           <li>
-            <Link to="/" >Home</Link>
+            <Link to="/" onClick={openHandler} >Home</Link>
           </li>
           <li>
-            <Link to="products" >Products</Link>
+            <Link to="products" onClick={openHandler}>Products</Link>
           </li>
           <li>
-            <Link to="/contactUs"  >ContactUs</Link>
+            <Link to="/contactUs" onClick={openHandler} >ContactUs</Link>
           </li>
           <li>
-            <Link to="/aboutUs"  >About us</Link>
+            <Link to="/aboutUs" onClick={openHandler} >About us</Link>
           </li>
         </ul>
       </div>
 
       <div className={styles.iconContainer}>
-        <Link to="/cart"  className={styles.basket} >
+        <Link to="/cart" onClick={openHandler} className={styles.bas} >
           <BsFillBasketFill />
         </Link>
         <span>{state.itemsCounter}</span>

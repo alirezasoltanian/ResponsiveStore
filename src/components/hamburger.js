@@ -51,7 +51,6 @@ class Hamburger extends Component {
     this.setState({
       open: !this.state.open
     })
-    console.log(this.state.open)
   }
   state = {  } 
   render() { 
@@ -63,7 +62,7 @@ class Hamburger extends Component {
           <div></div>
           <div></div>
         </Div>
-        <Navbar Open={this.state.open} />
+        <Navbar Open={this.state.open} openHandler={this.openHandler} />
       </>
     );
   }

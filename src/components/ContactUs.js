@@ -1,5 +1,6 @@
 import { MdEmail } from "react-icons/md";
 import { FaTelegramPlane } from "react-icons/fa";
+import { Button, Grid, TextField, Typography } from "@mui/material";
 import { IoLogoWhatsapp } from "react-icons/io";
 import React,{useRef} from 'react' ;
 import './ContactUs.css';
@@ -41,10 +42,10 @@ const Contact = () => {
         </div>
         {/* END OF CONTACT OPTION */}
         <form ref={form} onSubmit={sendEmail} >
-          <input type="text" name="name" placeholder='Your Full Name' required />
-          <input type="email" name='Email' placeholder='Your Email' required />
-          <textarea name="message" rows="7" placeholder='Your Message'></textarea>
-          <button type='submit' className='btnSubmit'>Send Message</button>
+          <TextField variant="outlined" type="text" name="name" label='Your Full Name'  />
+          <TextField type="email" variant="outlined" name='Email' label='Your Email' />
+          <TextField multiline minRows={4} variant="outlined" name="message"  label='Your Message'></TextField>
+          <button   type='submit' className='btnSubmit'>Send Message</button>
         </form>
       </div>
     </section >

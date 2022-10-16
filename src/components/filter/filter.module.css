@@ -1,0 +1,26 @@
+.container {
+}
+.filtericon{
+  justify-content: center;
+  width: 100%;
+}
+
+
+.icon{
+  
+
+}
+.filtericon p{
+   margin-bottom: -10px;
+}
+.search {
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  width: 40px;
+  height: 40px;
+}
+
+
+

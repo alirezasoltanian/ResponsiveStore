@@ -1,16 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 
 // Components
 import Product from "./shared/Product";
 
-// Redux
-import { fetchProducts } from "./redux/products/productsAction";
-import { useDispatch, useSelector } from "react-redux";
+// Context
+import { ProductsContext } from "../context/ProductContextProvider";
 
 // Style
 import styles from "./store.module.css";
 //script
-import {sortByIdThenName } from "../script/sort";
+import { sortByIdThenName } from "../script/sort";
 // img
 import img from "../images/Spinner-1.1s-200px (1).gif";
 import Loading from "./shared/Loading";
@@ -18,32 +17,41 @@ import Filter from "./filter/Filter";
 import {
   Box,
   Button,
+  Checkbox,
   FormControl,
   FormControlLabel,
   FormLabel,
+  InputLabel,
   Radio,
   RadioGroup,
   Slider,
+  TextField,
 } from "@mui/material";
 function valuetext(value) {
   return `${value}$`;
 }
 const Store = () => {
-  const [search , setSearch] = useState('')
+  const [search, setSearch] = useState("");
   const [selectCategory, setSelectCategory] = useState("");
   const [value, setValue] = useState([0, 1000]);
   const [checkedPrice, setCheckedPrice] = useState(false);
   const [checkedCount, setCheckedCount] = useState(false);
   const [productsFilter, setProductsFilter] = useState({});
   const [filterClose, setFilterClose] = useState(false);
+  const products = useContext(ProductsContext);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const dispatch = useDispatch();
-  const productsState = useSelector((state) => state.productsState);
+  // const searchFilter = () => {
+  //   setProductsFilter(
+  //     products.filter((product) =>
+  //       product.title.toLowerCase().includes(search.toLowerCase())
+  //     )
+  //   );
+  // };
   const SortHandler = () => {
     setProductsFilter(
-      productsState.products.filter(
+      products.filter(
         (product) =>
           product.category
             .toLowerCase()
@@ -58,36 +66,29 @@ const Store = () => {
     FilterHandler();
   };
 
-  const searchHandler = event => {
-    setSearch(event.target.value)
- }
- const searchCoin = productsState.products.filter(coins => coins.title.toLowerCase().includes(search.toLowerCase()))
-  
-  useEffect(() => {
-    setProductsFilter(searchCoin)
-  }, [search]);
+  const searchHandler = (event) => {
+    setSearch(event.target.value);
+  };
   const FilterHandler = () => {
     setFilterClose(!filterClose);
     console.log(filterClose);
   };
-  
+  // useEffect(() => {
+  //   searchFilter();
+  // }, [search]);
 
-  // useEffect(() =>{
-  //   if(!productsState.products.length) dispatch(fetchProducts())
-  // }, [])
-  useEffect(() => {
-    if (!productsState.products.length) {
-      dispatch(fetchProducts());
-    } 
-    setProductsFilter(productsState.products)
-
-  }, []);
+  useEffect(() =>{
+    if(!productsFilter.length) {
+      setProductsFilter(products )
+    };
+    
+  }, [])
 
   return (
     <div className={styles.containerForFilter}>
       <div
         style={{
-          position: "absolute",
+          position: "absolute", 
           width: "100%",
         }}
       >
@@ -97,7 +98,6 @@ const Store = () => {
             alignItems: "center",
           }}
           searchHandler={searchHandler}
-          
           search={search}
           setFilterClose={setFilterClose}
           filterClose={filterClose}
@@ -106,23 +106,10 @@ const Store = () => {
         />
       </div>
       <div className={styles.container}>
-      {
-                productsState.loading ? 
-                <div style={{justifyContent: 'center' , alignItems: "center" , width : '100%'}}>
-                <img  src={img} alt="logo" />
-                </div> :
-                productsState.error ?
-                    <p>Somethin went wrong</p> :
-                    productsFilter.length ? 
-                    productsFilter.map(product => <Product
-                            key={product.id}
-                            productData={product}
-                        />) :
-                        productsState.products.map(product => <Product
-                          key={product.id}
-                          productData={product}
-                      />)
-            }
+        {productsFilter.length &&
+          productsFilter.map((product) => (
+            <Product key={product.id} productData={product} />
+          ))}
         {filterClose && (
           <div
             style={{

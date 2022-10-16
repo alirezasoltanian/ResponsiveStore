@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+// Context
+import { CartContext } from '../../context/CartContextProvider';
 
 // Functions
 import { shorten } from '../../helper/function';
 
 // Icons
 import { MdDelete } from 'react-icons/md';
-// Redux
-import { useDispatch } from "react-redux";
-import {increase , decrease , removeItem } from "../redux/cart/cartAction"
+
+
 // Style
 import styles from "./carts.module.css";
 
 const Cart = (props) => {
 
-    const dispatch = useDispatch();
+    const {dispatch} = useContext(CartContext);
     const {image, title, price, quantity} = props.data;
 
     return (
@@ -30,10 +31,10 @@ const Cart = (props) => {
             <div className={styles.buttonContainer}>
                 {
                     quantity > 1 ? 
-                    <button onClick={() => dispatch(decrease(props.data))} >-</button> :
-                    <button onClick={() => dispatch(removeItem(props.data))} ><MdDelete /></button>
+                    <button onClick={() => dispatch({type: "DECREASE", payload: props.data})} >-</button> :
+                    <button onClick={() => dispatch({type: "REMOVE_ITEM", payload: props.data})} ><MdDelete /></button>
                 }
-                <button onClick={() => dispatch(increase(props.data))} >+</button>
+                <button onClick={() => dispatch({type: "INCREASE", payload: props.data})} >+</button>
             </div>
         </div>
     );

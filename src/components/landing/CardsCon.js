@@ -27,14 +27,13 @@
 //   }
 // }
 // export default Cards;
-import React , {useEffect} from 'react';
+import React, { useContext } from 'react';
 
 // Components
 import Product from '../shared/Product';
 
-// Redux
-import { fetchProducts } from "../redux/products/productsAction";
-import { useDispatch, useSelector } from "react-redux";
+// Context
+import { ProductsContext } from '../../context/ProductContextProvider';
 
 // Style
 import Styles from "./Cards.module.css";
@@ -57,15 +56,9 @@ import { Pagination, Navigation } from "swiper";
 import { Link } from 'react-router-dom';
 
 const Store = () => {
-    const dispatch = useDispatch();
-    const products = useSelector((state) => state.productsState.products);
-    useEffect(() => {
-    
-      if (!products.length) {
-        dispatch(fetchProducts());
-      } 
-  
-    }, []);
+
+    const products = useContext(ProductsContext)
+
     return (
        
         
