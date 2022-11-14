@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 // Components
 import Product from "./shared/Product";
+import SkeletProduct from "./shared/skeletProduct";
+
 
 // Redux
 import { fetchProducts } from "./redux/products/productsAction";
@@ -108,9 +110,13 @@ const Store = () => {
       <div className={styles.container}>
       {
                 productsState.loading ? 
-                <div style={{justifyContent: 'center' , alignItems: "center" , width : '100%'}}>
-                <img  src={img} alt="logo" />
-                </div> :
+                // <div style={{justifyContent: 'center' , alignItems: "center" , width : '100%'}}>
+                // <img  src={img} alt="logo" />
+                // </div>
+                  [1,2,3].map( n => 
+                      <SkeletProduct key={n} />
+                  )
+                :
                 productsState.error ?
                     <p>Somethin went wrong</p> :
                     productsFilter.length ? 
